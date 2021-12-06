@@ -1,0 +1,137 @@
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+}
+:root {
+    --overlay: #4cc4b8;
+    --hot: #d33;
+    --featured: #ea723d;
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+.parent {
+    padding: 20px 10px;
+    background-color: #ebcece;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,400px));
+    justify-content: center;
+    gap: 20px;
+}
+.gray {
+    color: gray;
+    font-size: .8rem;
+}
+.card .img-cont {
+    height: 250px;
+    transition-duration: 1s;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+.card {
+    background-color: white;
+}
+.card-1 .img-cont {
+    background-image: url(../images/villa-1.jpg);
+}
+.card-2 .img-cont {
+    background-image: url(../images/villa-2.jpg);
+}
+.card-3 .img-cont {
+    background-image: url(../images/villa-3.jpg);
+}
+.card .img-cont:hover {
+    background-color: var(--overlay);
+}
+.card-1 .img-cont .featured {
+    height: 1.5em;
+    background-color: var(--featured);
+    color: white;
+    padding: 0 5px;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+.card-1 .img-cont .featured::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -1.5em;
+    top: 0;
+    border: .75em solid transparent;
+    border-left: .75em solid var(--featured);
+}
+.card .hot {
+    color: white;
+    background-color: var(--hot);
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    line-height: 1;
+}
+.card .heart {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+.card .view {
+    padding: 15px;
+    color: white;
+    border: 2px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+.card .img-cont:hover .view {
+    opacity: 1;
+}
+.card .details {
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.card .details .icons {
+    display: flex;
+    column-gap: 10px;
+}
+.card .details .icons .area {
+    width: 100%;
+}
+.card .details .icons .icon-cont {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+.price span {
+    color: turquoise;
+}
